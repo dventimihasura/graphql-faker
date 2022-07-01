@@ -2,7 +2,7 @@ FROM node:14.3.0-alpine
 
 WORKDIR /workdir
 
-COPY schema.graphql .
+COPY sdl/schema.graphql .
 
 ENTRYPOINT ["node", "/usr/local/bin/graphql-faker", "schema.graphql"]
 
