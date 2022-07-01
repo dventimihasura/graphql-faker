@@ -1,7 +1,10 @@
 FROM node:14.3.0-alpine
 
-ENTRYPOINT ["node", "/usr/local/bin/graphql-faker"]
 WORKDIR /workdir
+
+COPY schema.graphql .
+
+ENTRYPOINT ["node", "/usr/local/bin/graphql-faker", "schema.graphql"]
 
 EXPOSE 9002
 
